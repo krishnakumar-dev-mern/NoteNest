@@ -14,19 +14,19 @@ import { protect } from "../middleware/auth.js";
 const router = express.Router();
 
 // Registration flow
-router.post("/register", register);
-router.post("/verify-otp", verifyOtp);
-router.post("/resend-otp", resendOtp);
+router.post("/auth/register", register);
+router.post("/auth/verify-otp", verifyOtp);
+router.post("/auth/resend-otp", resendOtp);
 
 // Login
-router.post("/login", login);
+router.post("/auth/login", login);
 
 // Forgot / reset password flow
-router.post("/forgot-password", forgotPassword);
-router.post("/verify-reset-otp", verifyResetOtp);
-router.post("/reset-password", resetPassword);
+router.post("/auth/forgot-password", forgotPassword);
+router.post("/auth/verify-reset-otp", verifyResetOtp);
+router.post("/auth/reset-password", resetPassword);
 
 // Protected
-router.get("/me", protect, getMe);
+router.get("/auth/me", protect, getMe);
 
 export default router;
